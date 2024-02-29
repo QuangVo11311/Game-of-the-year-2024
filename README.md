@@ -1,1 +1,3 @@
-# Game-of-the-year-2024
+# Pixel War
+### Programing Software: Visual Studio Code
+### Programing Language: Python
