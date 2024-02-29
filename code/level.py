@@ -36,22 +36,24 @@ class Level:
 					if col != '-1':
 						x = col_index * TILESIZE
 						y = row_index * TILESIZE
+
 						if style == 'boundary':
 							Tile((x, y), [self.obstacle_sprites], 'invisible')
+
 						if style == 'grass':
 							random_grass_image = choice(graphics['grass'])
 							Tile((x, y), [self.visible_sprites, self.obstacle_sprites], 'grass', random_grass_image)
+
 						if style == 'object':
 							surf = graphics['objects'][int(col)]
-							Tile((x, y), [self.visible_sprites, self.obstacle_sprites], 'objects', surf)
+							Tile((x, y), [self.visible_sprites, self.obstacle_sprites], 'object', surf)
 
 		self.player = Player((2000, 1430), [self.visible_sprites], self.obstacle_sprites)
-
+	
 	def run(self):
 		# update and draw the game
 		self.visible_sprites.custom_draw(self.player)
 		self.visible_sprites.update()
-
 
 class YSortCameraGroup(pygame.sprite.Group):
 	def __init__(self):
@@ -67,7 +69,7 @@ class YSortCameraGroup(pygame.sprite.Group):
 		self.floor_surf = pygame.image.load('../graphics/tilemap/ground.png').convert()
 		self.floor_rect = self.floor_surf.get_rect(topleft = (0, 0))
 
-	def custom_draw(self,player):
+	def custom_draw(self, player):
 
 		# getting the offset 
 		self.offset.x = player.rect.centerx - self.half_width
