@@ -1,6 +1,6 @@
-import pygame
 from csv import reader
 from os import walk
+import pygame
 
 def import_csv_layout(path):
 	terrain_map = []
