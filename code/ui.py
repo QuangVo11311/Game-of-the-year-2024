@@ -81,3 +81,13 @@ class UI:
 
 		self.weapon_overlay(player.weapon_index, not player.can_switch_weapon)
 		self.magic_overlay(player.magic_index, not player.can_switch_magic)
+
+	def show_game_over(self):
+        # Create screen Game Over
+		self.display_surface.fill((0, 0, 0))
+		font = pygame.font.Font(None, 74)
+		text = font.render('Game Over', True, (255, 0, 0))
+		text_rect = text.get_rect()
+		text_rect.center = (self.display_surface.get_width() / 2, self.display_surface.get_height() / 2)
+		self.display_surface.blit(text, text_rect)
+		pygame.display.flip()

@@ -19,6 +19,7 @@ class Game:
 		main_sound.play(loops = -1)
 	
 	def run(self):
+		game_over = False
 		while True:
 			for event in pygame.event.get():
 				if event.type == pygame.QUIT:
@@ -29,9 +30,17 @@ class Game:
 						self.level.toggle_menu()
 
 			self.screen.fill(WATER_COLOR)
-			self.level.run()
+
+			if not game_over:
+				self.level.run()
+			else:
+				self.show_game_over()
+
 			pygame.display.update()
 			self.clock.tick(FPS)
+
+			if self.level.check_game_over():
+				game_over = True
 
 if __name__ == '__main__':
 	game = Game()
