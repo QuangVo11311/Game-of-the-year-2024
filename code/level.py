@@ -164,7 +164,7 @@ class Level:
 			self.game_over()
 
 	def game_over(self):
-		# Hiển thị màn hình Game Over
+		# Call Game OVer Screen
 		self.ui.show_game_over()
 
 class YSortCameraGroup(pygame.sprite.Group):
