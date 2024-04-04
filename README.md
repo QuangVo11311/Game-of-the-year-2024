@@ -1,4 +1,4 @@
-# Pixel War
+# PixelWar
 Đồ án môn học: Python
 
 ## Thành viên
@@ -20,6 +20,9 @@
 - Tấn công bằng phép: Left Ctrl
 - Đổi vũ khí: Q
 - Đổi phép: E
+- Nâng cấp thông số: M
+    -  Space để tăng
+    - Left or Right để di chuyển
 
 ## Cài đặt python vào máy
 Để có thể chạy được file chương trình thì ta sẽ phải cài python vào máy trước
