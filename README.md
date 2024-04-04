@@ -33,5 +33,5 @@
 - Bước 2: Gõ như sau: pip install pygame
 - Bước 3: Chờ máy tự cài xong rồi sử dụng
 
-# Tham khảo
+# Tài liệu tham khảo chính
 [Link Youtube](https://youtu.be/QU1pPzEGrqw?si=QJuEe3Pp0nt29qjJ)
