@@ -49,9 +49,9 @@ class Enemy(Entity):
 		self.death_sound = pygame.mixer.Sound('../audio/death.wav')
 		self.hit_sound = pygame.mixer.Sound('../audio/hit.wav')
 		self.attack_sound = pygame.mixer.Sound(monster_info['attack_sound'])
-		self.death_sound.set_volume(0.6)
-		self.hit_sound.set_volume(0.6)
-		self.attack_sound.set_volume(0.6)
+		self.death_sound.set_volume(0.4)
+		self.hit_sound.set_volume(0.4)
+		self.attack_sound.set_volume(0.4)
 
 	def import_graphics(self, name):
 		self.animations = {'idle': [], 'move': [], 'attack': []}

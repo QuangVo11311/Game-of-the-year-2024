@@ -21,7 +21,7 @@
 - Đổi vũ khí: Q
 - Đổi phép: E
 - Nâng cấp thông số: M
-    -  Space để tăng
+    - Space để tăng
     - Left or Right để di chuyển
 
 ## Cài đặt python vào máy
