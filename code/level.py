@@ -150,7 +150,6 @@ class Level:
 		self.ui.display(self.player)
 
 		self.player_attack_logic()
-		self.check_game_over()
 		
 		if self.game_paused:
 			self.upgrade.display()
@@ -158,14 +157,6 @@ class Level:
 			self.visible_sprites.update()
 			self.visible_sprites.enemy_update(self.player)
 			self.player_attack_logic()
-		
-	def check_game_over(self):
-		if self.player.health <= 0:
-			self.game_over()
-
-	def game_over(self):
-		# Call Game OVer Screen
-		self.ui.show_game_over()
 
 class YSortCameraGroup(pygame.sprite.Group):
 	def __init__(self):

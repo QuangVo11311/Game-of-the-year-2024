@@ -13,6 +13,7 @@ class Player(Entity):
 		# graphics setup
 		self.import_player_assets()
 		self.status = 'down'
+		self.display_surface = pygame.display.get_surface()
 
 		# movement 
 		self.attacking = False
@@ -53,6 +54,13 @@ class Player(Entity):
 		# import a sound
 		self.weapon_attack_sound = pygame.mixer.Sound('../audio/sword.wav')
 		self.weapon_attack_sound.set_volume(0.4)
+
+		self.game_over = pygame.mixer.Sound('../audio/GameOver.wav')
+		self.game_over.set_volume(1)
+		self.g_o_ft = True
+		self.dead = False
+		self.font = pygame.font.Font(UI_FONT, 50)
+		self.restart_pressed = False
 
 	def import_player_assets(self):
 		character_path = '../graphics/player/'
@@ -207,6 +215,22 @@ class Player(Entity):
 		else:
 			self.energy = self.stats['energy']
 
+	def check_death(self):
+		if self.health < 0:
+			if self.dead == False:
+				self.dead = True
+			title_surf = self.font.render('press enter to restart', False, (255,255,255))
+			if self.g_o_ft:
+				self.game_over.play()
+				self.g_o_ft = False
+			title_rect = title_surf.get_rect(center = (650, 300))
+			self.display_surface.fill((0, 0, 0))
+			self.display_surface.blit(title_surf, title_rect)
+			for event in pygame.event.get():
+				if event.type == pygame.KEYDOWN:
+					if event.key == pygame.K_RETURN:
+						self.restart_pressed = True
+
 	def update(self):
 		self.input()
 		self.cooldowns()
@@ -214,3 +238,4 @@ class Player(Entity):
 		self.animate()
 		self.move(self.stats['speed'])
 		self.energy_recovery()
+		self.check_death()
