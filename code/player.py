@@ -55,6 +55,7 @@ class Player(Entity):
 		self.weapon_attack_sound = pygame.mixer.Sound('../audio/sword.wav')
 		self.weapon_attack_sound.set_volume(0.3)
 
+		# character's death
 		self.game_over = pygame.mixer.Sound('../audio/GameOver.wav')
 		self.game_over.set_volume(1)
 		self.g_o_ft = True
