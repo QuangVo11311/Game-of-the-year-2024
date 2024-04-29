@@ -4,9 +4,9 @@
 ## Thành viên
 | TenSV               | MaSV       |
 |---------------------|------------|
+| Triệu Khánh Quang   | 3120410428 |
 | Võ Đăng Quang       | 3120410429 |
 | Nguyễn Văn Tấn Quân | 3120410437 |
-| Triệu Khánh Quang   | 3120410428 |
 | Phạm Minh Quân      | 3120410438 |
 
 # Game được code bằng Visual Studio Code
